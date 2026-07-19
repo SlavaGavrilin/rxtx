@@ -6,8 +6,8 @@ After=network.target
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/bin/bash -c '/usr/sbin/ethtool -G $(ls -d /sys/class/net/ens* 2>/dev/null | head -n1 | xargs basename) rx 4096 tx 4096'
-ExecStart=/bin/bash -c '/usr/sbin/ethtool -G $(ls -d /sys/class/net/ens* 2>/dev/null | head -n1 | xargs basename) rx 4096 tx 4096'
+ExecStart=/bin/bash -c '/usr/sbin/ethtool -G $(ls -d /sys/class/net/e* 2>/dev/null | head -n1 | xargs basename) rx 4096 tx 4096'
+ExecStart=/bin/bash -c '/usr/sbin/ethtool -G $(ls -d /sys/class/net/e* 2>/dev/null | head -n1 | xargs basename) rx 4096 tx 4096'
 Restart=on-failure
 RestartSec=5
 
